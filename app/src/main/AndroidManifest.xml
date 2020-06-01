@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service android:name=".LocalService"/>
-        <activity android:name=".Main4Activity"></activity>
+        <activity android:name=".viewmodel.ViewModelActivity"></activity>
+
+        <service android:name=".service.RemoteService" android:exported="true" />
+
+        <activity android:name=".Main4Activity" />
         <activity android:name=".Main3Activity" />
-        <activity android:name=".Main2Activity" android:launchMode="singleTask"/>
+        <activity
+            android:name=".Main2Activity"
+            android:launchMode="singleTask" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

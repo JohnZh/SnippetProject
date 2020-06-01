@@ -1,4 +1,4 @@
-package com.john.newtest;
+package com.john.newtest.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

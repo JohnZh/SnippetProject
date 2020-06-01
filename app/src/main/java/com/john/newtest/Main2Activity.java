@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import com.john.bindlib.BindLib;
 import com.john.bindlib.annotation.BindView;
+import com.john.newtest.service.RemoteService;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,7 +30,7 @@ public class Main2Activity extends AppCompatActivity {
         mTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bindService(new Intent(Main2Activity.this, LocalService.class), mConnection, Context.BIND_AUTO_CREATE);
+                bindService(new Intent(Main2Activity.this, RemoteService.class), mConnection, Context.BIND_AUTO_CREATE);
             }
         });
     }
