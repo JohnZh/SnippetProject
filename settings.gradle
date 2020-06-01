@@ -1,0 +1,5 @@
+rootProject.name='NewTest'
+include ':app'
+include ':purejava'
+include ':bindCompiler'
+include ':bindLib'
