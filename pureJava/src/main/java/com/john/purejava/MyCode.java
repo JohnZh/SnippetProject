@@ -1,6 +1,7 @@
 package com.john.purejava;
 
 import com.john.purejava.annoprocesser.TableUtils;
+import com.john.purejava.designpattern.PatternTester;
 import com.john.purejava.designpattern.builder.Product;
 import com.john.purejava.designpattern.proxy.Image;
 import com.john.purejava.designpattern.proxy.ImageInvocationHandler;
@@ -19,29 +20,7 @@ import java.lang.reflect.Proxy;
 public class MyCode {
 
     public static void main(String[] args) {
-        testDynamicProxy();
-    }
-
-    private static void testDynamicProxy() {
-        LocalImage localImage = new LocalImage("im1.png");
-        Image imageProxy = (Image) Proxy.newProxyInstance(localImage.getClass().getClassLoader(),
-                localImage.getClass().getInterfaces(),
-                new ImageInvocationHandler(localImage));
-        imageProxy.display();
-        imageProxy.hashCode();
-    }
-
-    private static void testProxyPattern() {
-        ImageProxy proxy = new ImageProxy("im.png");
-        proxy.display();
-    }
-
-    private static void testBuilderPattern() {
-        Product product = Product.builder()
-                .buildPart1("part1")
-                .buildPart2("part2")
-                .bind();
-        System.out.println(product);
+        PatternTester.testDynamicProxy();
     }
 
     private static void testAnnotation() {
