@@ -2,15 +2,8 @@ package com.john.purejava;
 
 import com.john.purejava.annoprocesser.TableUtils;
 import com.john.purejava.designpattern.PatternTester;
-import com.john.purejava.designpattern.builder.Product;
-import com.john.purejava.designpattern.proxy.Image;
-import com.john.purejava.designpattern.proxy.ImageInvocationHandler;
-import com.john.purejava.designpattern.proxy.ImageProxy;
-import com.john.purejava.designpattern.proxy.LocalImage;
 import com.john.purejava.model.User;
 import com.john.purejava.model.UserOrder;
-
-import java.lang.reflect.Proxy;
 
 /**
  * Modified by john on 2020/3/20
@@ -20,7 +13,7 @@ import java.lang.reflect.Proxy;
 public class MyCode {
 
     public static void main(String[] args) {
-        PatternTester.testDynamicProxy();
+        PatternTester.testChainOfResponsibilityVariety();
     }
 
     private static void testAnnotation() {
