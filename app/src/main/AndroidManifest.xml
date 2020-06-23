@@ -9,10 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".viewmodel.ViewModelActivity"></activity>
+        <activity android:name=".activities.HotFixActivity"></activity>
 
-        <service android:name=".service.RemoteService" android:exported="true" />
+        <service
+            android:name=".service.RemoteService"
+            android:exported="true" />
 
+        <activity android:name=".activities.TestAidlActivity" />
+        <activity android:name=".viewmodel.ViewModelActivity" />
         <activity android:name=".Main4Activity" />
         <activity android:name=".Main3Activity" />
         <activity

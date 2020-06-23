@@ -2,6 +2,14 @@
 
 # 代码说明
 
+## app 
+
+### activities.TestAidlActivity & aidl & aidl.People
+
+进程间通信，AIDL sample：定义了一个自定义通信数据 People
+
+### 
+
 ## bindCompiler & bindLib 
 
 学习 APT 模仿 BufferKnife 使用注解在编译期生成 findViewById 的代码
