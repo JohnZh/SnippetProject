@@ -1,6 +1,18 @@
 # SnippetProject
 
 # 代码说明
+项目架构已经调整为组件化开发架构
+
+## 组件化开发模块划分
+- app
+- common
+- business/ 
+- JRouter 自定义路由框架
+- JRouterAnnotation 自定义路由框架注解
+- JRouterCompiler 自定义路由框架注解解析器
+
+## and5_22 and6_23 and7_25 and8_27
+这几个模块只是用于查看源码的空模块
 
 ## app 
 
