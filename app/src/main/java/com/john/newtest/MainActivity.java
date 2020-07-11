@@ -3,10 +3,12 @@ package com.john.newtest;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 
-import com.john.newtest.activities.HotFixActivity;
+import com.john.common.BaseActivity;
+import com.john.jrouter.JRouter;
+import com.john.jrouter.annotation.Route;
 import com.john.newtest.databinding.ActivityMainBinding;
-import com.john.newtest.utils.Launcher;
 
+@Route("/app/main")
 public class MainActivity extends BaseActivity {
 
     ActivityMainBinding mBinding;
@@ -17,6 +19,7 @@ public class MainActivity extends BaseActivity {
         mBinding = ActivityMainBinding.inflate(LayoutInflater.from(this));
         setContentView(mBinding.getRoot());
 
-        Launcher.with(getActivity(), HotFixActivity.class).execute();
+        JRouter.get().message("/app/testRoute").route();
     }
+
 }

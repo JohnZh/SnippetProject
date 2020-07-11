@@ -1,0 +1,59 @@
+if (rootProject.ext.isDev.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+
+android {
+    compileSdkVersion rootProject.ext.sdk.compileSdk.toInteger()
+
+    defaultConfig {
+        if (rootProject.ext.isDev.toBoolean()) {
+            applicationId "com.john.newtest.home"
+        }
+        minSdkVersion rootProject.ext.sdk.minSdk.toInteger()
+        targetSdkVersion rootProject.ext.sdk.targetSdk.toInteger()
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions.annotationProcessorOptions.arguments = [moduleName: project.name]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            if (rootProject.ext.isDev.toBoolean()) {
+                manifest.srcFile 'src/main/dev/AndroidManifest.xml'
+                java.srcDirs 'src/main/dev/java'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation project(path: ':business:home-api')
+
+    implementation rootProject.ext.dependencies
+    rootProject.ext.localModules.each {
+        implementation project(it)
+    }
+    rootProject.ext.localProcessor.each {
+        annotationProcessor project(it)
+    }
+}

@@ -14,6 +14,7 @@
 
 学习 APT 模仿 BufferKnife 使用注解在编译期生成 findViewById 的代码
 
+- activities.BindLibTestActivity 测试 bindLib 的代码
 - bindCompiler 定义注解解析器，注册注解解析器
 - bindLib 调用库类，定义注解，定义静态调用工具
 

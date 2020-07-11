@@ -3,7 +3,7 @@ package com.john.newtest.activities;
 import android.Manifest;
 import android.os.Bundle;
 
-import com.john.newtest.BaseActivity;
+import com.john.common.BaseActivity;
 import com.john.newtest.databinding.ActivityHotFixBinding;
 import com.john.newtest.hotfix.Calculator;
 

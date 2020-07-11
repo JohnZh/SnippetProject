@@ -1,8 +1,8 @@
 package com.john.newtest;
 
-import android.app.Application;
 import android.util.Log;
 
+import com.john.common.BaseApplication;
 import com.john.newtest.hotfix.HotFix;
 
 import java.io.File;
@@ -14,7 +14,8 @@ import androidx.core.content.ContextCompat;
  *
  * <p></p>
  */
-public class MyApp extends Application {
+public class MyApp extends BaseApplication {
+
     @Override
     public void onCreate() {
         super.onCreate();
