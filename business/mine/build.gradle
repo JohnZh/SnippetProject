@@ -37,6 +37,10 @@ android {
             }
         }
     }
+
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -47,6 +51,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation rootProject.ext.dependencies
+    implementation project(path: ':business:mine-api')
     rootProject.ext.localModules.each {
         implementation project(it)
     }

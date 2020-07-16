@@ -1,7 +1,6 @@
 package com.john.purejava;
 
 import com.john.purejava.annoprocesser.TableUtils;
-import com.john.purejava.designpattern.PatternTester;
 import com.john.purejava.model.User;
 import com.john.purejava.model.UserOrder;
 
@@ -13,7 +12,10 @@ import com.john.purejava.model.UserOrder;
 public class MyCode {
 
     public static void main(String[] args) {
-        PatternTester.testChainOfResponsibilityVariety();
+        //PatternTester.testChainOfResponsibilityVariety();
+
+        //CountDownLatchTest.execute();
+        //CyclicBarrierTest.execute();
     }
 
     private static void testAnnotation() {
@@ -21,4 +23,5 @@ public class MyCode {
         TableUtils.createTable(source, User.class);
         TableUtils.createTable(source, UserOrder.class);
     }
+
 }

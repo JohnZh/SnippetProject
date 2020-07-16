@@ -1,4 +1,4 @@
-if (rootProject.ext.isDev.toBoolean()) {
+if (rootProject.ext.isDev) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
@@ -8,7 +8,7 @@ android {
     compileSdkVersion rootProject.ext.sdk.compileSdk.toInteger()
 
     defaultConfig {
-        if (rootProject.ext.isDev.toBoolean()) {
+        if (rootProject.ext.isDev) {
             applicationId "com.john.newtest.home"
         }
         minSdkVersion rootProject.ext.sdk.minSdk.toInteger()

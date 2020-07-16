@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" content="text/html" http-equiv="content-type">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capble" content="yes">
+	<title>Test</title>
+
+	<style type="text/css">
+		.item {
+			padding: 20px;
+			max-width: 600px;
+			margin: 0 auto;
+			text-align: center;
+			background-color: #999999;
+			margin-top: 20px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function invokeToast() {
+			window.webview.post('toast', '{message: "hello webview"}')			
+		}
+		
+		function login() {
+			window.webview.post('login', '{phone:"13567124531"}')
+		}
+
+		function openActivityA() {
+			window.webview.post('start_activity', '{path:"/web/test"}')
+		}
+
+		function openActivityB() {
+			window.webview.post('start_activity', '{path:"/web/test2"}')
+		}
+
+		function callback(cmd, response) {
+			if (cmd == 'login') {
+				document.getElementById('login').innerHTML = response.phone + " " + response.name;			
+			}
+		}
+	</script>
+</head>
+<body style="height: 100%">
+	<div class="item" onClick="invokeToast()">invoke toast</div>
+	<div class="item" id="login" onClick="login()">fake login</div>
+	<div class="item" onClick="openActivityA()">openActivityA</div>
+	<div class="item" onClick="openActivityB()">openActivityB</div>
+</body>
+</html>
+

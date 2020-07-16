@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.john.webview">
+
+    <application>
+        <activity
+            android:name="com.john.webview.WebViewActivity"
+            android:hardwareAccelerated="true"
+            android:process=":remote"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <service android:name="com.john.webview.main.HandleWebService" />
+    </application>
+
+</manifest>
