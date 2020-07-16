@@ -11,6 +11,12 @@
 - JRouterAnnotation 自定义路由框架注解
 - JRouterCompiler 自定义路由框架注解解析器
 
+## webview
+单进程 webview 模块，且利用 js 注入和 java 反射避免的 4.2 以下版本的漏洞，统一了 js 的调用模式
+
+- SecureWebView 用 map 存储 js 接口对象，完成要注入的 js 代码的构造
+- SecureWebChromeClient 拦截注入的 js 解析以及在进度合适的时候注入 js
+
 ## and5_22 and6_23 and7_25 and8_27
 这几个模块只是用于查看源码的空模块
 
@@ -18,9 +24,7 @@
 
 ### activities.TestAidlActivity & aidl & aidl.People
 
-进程间通信，AIDL sample：定义了一个自定义通信数据 People
-
-### 
+进程间通信，AIDL sample：定义了一个自定义通信数据 People 
 
 ## bindCompiler & bindLib 
 
