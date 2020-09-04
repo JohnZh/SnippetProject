@@ -2,6 +2,7 @@ package com.john.newtest.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
@@ -29,6 +30,8 @@ public class TestRouteActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         mBinding = ActivityTestRouteBinding.inflate(LayoutInflater.from(this));
         setContentView(mBinding.getRoot());
+
+        int intKey = getIntent().getIntExtra("intKey", -1);
 
         mBinding.openHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +78,12 @@ public class TestRouteActivity extends BaseActivity {
                 });
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("Temp", "onDestroy: "); // todo remove later
     }
 
     @Override

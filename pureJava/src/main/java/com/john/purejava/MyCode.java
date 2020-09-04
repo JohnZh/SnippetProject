@@ -1,5 +1,7 @@
 package com.john.purejava;
 
+import com.john.purejava.algorithm.HeapSort;
+import com.john.purejava.algorithm.SortTest;
 import com.john.purejava.annoprocesser.TableUtils;
 import com.john.purejava.model.User;
 import com.john.purejava.model.UserOrder;
@@ -16,6 +18,9 @@ public class MyCode {
 
         //CountDownLatchTest.execute();
         //CyclicBarrierTest.execute();
+
+        new SortTest(new HeapSort()).test();
+
     }
 
     private static void testAnnotation() {
@@ -23,5 +28,4 @@ public class MyCode {
         TableUtils.createTable(source, User.class);
         TableUtils.createTable(source, UserOrder.class);
     }
-
 }

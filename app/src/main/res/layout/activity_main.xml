@@ -4,4 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.john.newtest.view.ParentView
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintLeft_toLeftOf="@id/parent"
+        app:layout_constraintTop_toTopOf="@id/parent">
+
+        <com.john.newtest.view.ChildView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.john.newtest.view.ParentView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

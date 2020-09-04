@@ -19,7 +19,6 @@ public class MyApp extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-
         File patchFile = new File("/sdcard/patch.dex");
         if (patchFile.exists()) {
             Log.d("Temp", "onCreate: " + "fix bug"); // todo remove later

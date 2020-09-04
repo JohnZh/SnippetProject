@@ -1,6 +1,6 @@
 ext {
 
-    isDev = true
+    isDev = false
 
     sdk = [
             compileSdk: 28,

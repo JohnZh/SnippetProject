@@ -19,7 +19,8 @@ public class MainActivity extends BaseActivity {
         mBinding = ActivityMainBinding.inflate(LayoutInflater.from(this));
         setContentView(mBinding.getRoot());
 
-        JRouter.get().message("/app/testRoute").route();
+        JRouter.get().message("/app/testweb")
+                .putInt("intKey", 1)
+                .route();
     }
-
 }

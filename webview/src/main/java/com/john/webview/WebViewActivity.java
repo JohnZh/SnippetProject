@@ -1,6 +1,8 @@
 package com.john.webview;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 
 import com.john.jrouter.annotation.Route;
@@ -14,11 +16,15 @@ public class WebViewActivity extends AppCompatActivity {
 
     ActivityWebViewBinding binding;
 
+    private String url;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityWebViewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        processIntent(getIntent());
 
         WebViewFragment webViewFragment = (WebViewFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.webViewFragment);
@@ -45,6 +51,18 @@ public class WebViewActivity extends AppCompatActivity {
                 binding.progressBar.setVisibility(View.GONE);
             }
         });
-        secureWebView.loadUrl("file:///android_asset/page/test.html");
+
+        if (TextUtils.isEmpty(this.url)) {
+            secureWebView.loadUrl("file:///android_asset/page/test.html");
+        } else {
+            secureWebView.loadUrl(this.url);
+        }
+    }
+
+    private void processIntent(Intent intent) {
+        String url = intent.getStringExtra("url");
+        if (!TextUtils.isEmpty(url)) {
+            this.url = url;
+        }
     }
 }
