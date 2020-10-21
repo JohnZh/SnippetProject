@@ -5,7 +5,7 @@ if (rootProject.ext.isDev.toBoolean()) {
 }
 
 android {
-    compileSdkVersion rootProject.ext.sdk.compileSdk.toInteger()
+    compileSdkVersion rootProject.ext.sdk.compileSdk
 
     defaultConfig {
         if (rootProject.ext.isDev.toBoolean()) {

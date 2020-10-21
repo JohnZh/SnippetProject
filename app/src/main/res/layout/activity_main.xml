@@ -1,20 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
 
-    <com.john.newtest.view.ParentView
-        android:id="@+id/parent"
+    <Button
+        android:id="@+id/stop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:layout_constraintLeft_toLeftOf="@id/parent"
-        app:layout_constraintTop_toTopOf="@id/parent">
+        android:text="stop" />
 
-        <com.john.newtest.view.ChildView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </com.john.newtest.view.ParentView>
+    <Button
+        android:id="@+id/sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sub" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/unsub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="unsub" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="123"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+</LinearLayout>

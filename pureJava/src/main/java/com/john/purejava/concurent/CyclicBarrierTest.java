@@ -29,6 +29,8 @@ public class CyclicBarrierTest {
                 e.printStackTrace();
             } catch (BrokenBarrierException e) {
                 e.printStackTrace();
+            } finally {
+                System.out.println(Thread.currentThread().getName() + " finish");
             }
         }
     }

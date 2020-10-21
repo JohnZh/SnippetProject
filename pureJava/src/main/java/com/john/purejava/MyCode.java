@@ -1,10 +1,7 @@
 package com.john.purejava;
 
-import com.john.purejava.algorithm.HeapSort;
-import com.john.purejava.algorithm.SortTest;
-import com.john.purejava.annoprocesser.TableUtils;
-import com.john.purejava.model.User;
-import com.john.purejava.model.UserOrder;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Modified by john on 2020/3/20
@@ -13,19 +10,32 @@ import com.john.purejava.model.UserOrder;
  */
 public class MyCode {
 
-    public static void main(String[] args) {
-        //PatternTester.testChainOfResponsibilityVariety();
-
-        //CountDownLatchTest.execute();
-        //CyclicBarrierTest.execute();
-
-        new SortTest(new HeapSort()).test();
-
+    public static void main(String[] args) throws Exception {
+        /*ThreadPoolExecutor executor = new ThreadPoolExecutor(0, 5,
+                5, TimeUnit.SECONDS,
+                new LinkedBlockingDeque<>(5), new MyThreadFactory(),
+                new ThreadPoolExecutor.DiscardPolicy());
+        */
     }
 
-    private static void testAnnotation() {
-        TableUtils.ConnectionSource source = new TableUtils.ConnectionSource();
-        TableUtils.createTable(source, User.class);
-        TableUtils.createTable(source, UserOrder.class);
+    private static class B {
+        String string = new String("1");
     }
+
+
+    static class MyThreadFactory implements ThreadFactory {
+
+        private AtomicInteger atomicInteger = new AtomicInteger(1);
+
+        @Override
+        public Thread newThread(Runnable runnable) {
+            return new Thread(runnable, "Worker-" + atomicInteger.getAndIncrement());
+        }
+    }
+
+//    private static void testAnnotation() {
+//        TableUtils.ConnectionSource source = new TableUtils.ConnectionSource();
+//        TableUtils.createTable(source, User.class);
+//        TableUtils.createTable(source, UserOrder.class);
+//    }
 }

@@ -23,6 +23,13 @@ public class ChildView extends View {
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        Log.d("Temp", "onMeasure: " + widthMeasureSpec); // todo remove later
+        Log.d("Temp", "onMeasure: " + heightMeasureSpec); // todo remove later
+    }
+
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
         int actionMasked = event.getActionMasked();
         Log.d("Temp", "onTouchEvent: " + actionMasked); // todo remove later

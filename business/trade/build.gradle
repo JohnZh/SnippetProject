@@ -5,14 +5,14 @@ if (rootProject.ext.isDev.toBoolean()) {
 }
 
 android {
-    compileSdkVersion rootProject.ext.sdk.compileSdk.toInteger()
+    compileSdkVersion rootProject.ext.sdk.compileSdk
 
     defaultConfig {
         if (rootProject.ext.isDev.toBoolean()) {
             applicationId "com.john.newtest.trade"
         }
-        minSdkVersion rootProject.ext.sdk.minSdk.toInteger()
-        targetSdkVersion rootProject.ext.sdk.targetSdk.toInteger()
+        minSdkVersion rootProject.ext.sdk.minSdk
+        targetSdkVersion rootProject.ext.sdk.targetSdk
         versionCode 1
         versionName "1.0"
 

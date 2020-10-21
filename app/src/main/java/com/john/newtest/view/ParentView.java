@@ -22,6 +22,13 @@ public class ParentView extends LinearLayout {
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        Log.d("Temp", "onMeasure: " + widthMeasureSpec); // todo remove later
+        Log.d("Temp", "onMeasure: " + heightMeasureSpec); // todo remove later
+    }
+
+    @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         int actionMasked = ev.getActionMasked();
         Log.d("Temp", "onInterceptTouchEvent: " + actionMasked); // todo remove later

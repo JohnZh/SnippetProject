@@ -2,6 +2,7 @@ apply plugin: 'java'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'org.openjdk.jol:jol-core:0.12'
 
     testImplementation 'junit:junit:4.12'
 }
