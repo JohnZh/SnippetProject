@@ -3,7 +3,7 @@
     package="com.john.newtest.mine">
 
     <application>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MineMainActivity" />
     </application>
 
 </manifest>

@@ -3,7 +3,7 @@
     package="com.john.newtest.home">
 
     <application>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".HomeMainActivity" />
 
     </application>
 

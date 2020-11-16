@@ -16,10 +16,16 @@ public class MyCode {
                 new LinkedBlockingDeque<>(5), new MyThreadFactory(),
                 new ThreadPoolExecutor.DiscardPolicy());
         */
+
+
     }
 
-    private static class B {
-        String string = new String("1");
+    private static class A {
+
+    }
+    private  static class B extends A {
+    }
+    private static class C extends B  {
     }
 
 

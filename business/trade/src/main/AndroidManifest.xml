@@ -3,7 +3,7 @@
     package="com.john.newtest.trade">
 
     <application>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".TradeMainActivity" />
     </application>
 
 </manifest>

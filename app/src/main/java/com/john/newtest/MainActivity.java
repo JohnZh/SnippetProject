@@ -50,6 +50,7 @@ public class MainActivity extends BaseActivity {
                 mBinding.text.setText(data.getData());
             }
         });
+
     }
 
     private ServiceConnection getConn() {
