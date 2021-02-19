@@ -1,10 +1,10 @@
 ext {
 
-    isDev = true
+    isDev = false
 
     sdk = [
             compileSdk: 28,
-            minSdk    : 15,
+            minSdk    : 19,
             targetSdk : 28
     ]
 

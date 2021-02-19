@@ -12,7 +12,7 @@ import com.john.home_api.HomeDataService;
 import com.john.jrouter.JRouter;
 import com.john.jrouter.RouteCallback;
 import com.john.jrouter.RouteCallbackWithInstance;
-import com.john.jrouter.RouteMsg;
+import com.john.jrouter.RoutePath;
 import com.john.jrouter.annotation.Route;
 import com.john.newtest.R;
 import com.john.newtest.databinding.ActivityTestRouteBinding;
@@ -36,19 +36,19 @@ public class TestRouteActivity extends BaseActivity {
         mBinding.openHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                JRouter.get().message("/home/main").route(getActivity(), 100, new RouteCallback() {
+                JRouter.get().path("/home/main").route(getActivity(), 100, new RouteCallback() {
                     @Override
-                    public void onLost(RouteMsg msg) {
+                    public void onLost(RoutePath path) {
                         Toast.makeText(getActivity(), "lost", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
-                    public void onFound(RouteMsg msg) {
+                    public void onFound(RoutePath path) {
                         Toast.makeText(getActivity(), "found", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
-                    public void onArrived(RouteMsg msg) {
+                    public void onArrived(RoutePath path) {
                         Toast.makeText(getActivity(), "arrived", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -58,7 +58,7 @@ public class TestRouteActivity extends BaseActivity {
         mBinding.loadFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                JRouter.get().message("/home/blankFragment").route(new RouteCallbackWithInstance<Fragment>() {
+                JRouter.get().path("/home/blankFragment").route(new RouteCallbackWithInstance<Fragment>() {
                     @Override
                     public void onInstance(Fragment instance) {
                         addFragment2Activity(instance);
@@ -70,7 +70,7 @@ public class TestRouteActivity extends BaseActivity {
         mBinding.showHomeData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                JRouter.get().message("/home/homeData").route(new RouteCallbackWithInstance<HomeDataService>() {
+                JRouter.get().path("/home/homeData").route(new RouteCallbackWithInstance<HomeDataService>() {
                     @Override
                     public void onInstance(HomeDataService instance) {
                         Toast.makeText(getActivity(), instance.getText(), Toast.LENGTH_SHORT).show();

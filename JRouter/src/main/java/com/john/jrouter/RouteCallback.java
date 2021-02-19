@@ -6,9 +6,9 @@ package com.john.jrouter;
  * <p>路由结果</p>
  */
 public interface RouteCallback {
-    void onLost(RouteMsg msg);
+    void onLost(RoutePath path);
 
-    void onFound(RouteMsg msg);
+    void onFound(RoutePath path);
 
-    void onArrived(RouteMsg msg);
+    void onArrived(RoutePath path);
 }

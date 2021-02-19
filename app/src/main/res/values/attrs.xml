@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoadingView">
+        <attr name="frameResArray" format="reference" />
+        <attr name="drawWidth" format="integer|dimension|reference" />
+        <attr name="drawHeight" format="integer|dimension|reference" />
+        <attr name="frameDurationMills" format="integer|reference" />
+        <attr name="repeat" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -5,7 +5,7 @@ import android.util.Log;
 
 import com.john.jrouter.JRouter;
 import com.john.jrouter.RouteCallback;
-import com.john.jrouter.RouteMsg;
+import com.john.jrouter.RoutePath;
 import com.john.jrouter.annotation.Route;
 import com.john.newtest.R;
 
@@ -19,20 +19,20 @@ public class TestWebActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_web);
 
-        JRouter.get().message("/web/webview")
+        JRouter.get().path("/web/webview")
                 //.putString("url", "https://www.baidu.com")
                 .route(new RouteCallback() {
                     @Override
-                    public void onLost(RouteMsg msg) {
+                    public void onLost(RoutePath path) {
                         Log.d("Temp", "onLost: "); // todo remove later
                     }
 
                     @Override
-                    public void onFound(RouteMsg msg) {
+                    public void onFound(RoutePath path) {
                     }
 
                     @Override
-                    public void onArrived(RouteMsg msg) {
+                    public void onArrived(RoutePath path) {
 
                     }
                 });

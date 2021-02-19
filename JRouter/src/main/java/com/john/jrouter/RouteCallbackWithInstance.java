@@ -8,17 +8,17 @@ package com.john.jrouter;
 public abstract class RouteCallbackWithInstance<T> implements RouteCallback {
 
     @Override
-    public void onLost(RouteMsg msg) {
+    public void onLost(RoutePath path) {
 
     }
 
     @Override
-    public void onFound(RouteMsg msg) {
+    public void onFound(RoutePath path) {
 
     }
 
     @Override
-    public void onArrived(RouteMsg msg) {
+    public void onArrived(RoutePath path) {
 
     }
 

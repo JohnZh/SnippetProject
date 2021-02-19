@@ -4,6 +4,8 @@ if (rootProject.ext.isDev) {
     apply plugin: 'com.android.library'
 }
 
+apply plugin: 'kotlin-android'
+
 android {
     compileSdkVersion rootProject.ext.sdk.compileSdk
 
@@ -65,4 +67,10 @@ dependencies {
     rootProject.ext.localProcessor.each {
         annotationProcessor project(it)
     }
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+    mavenCentral()
 }

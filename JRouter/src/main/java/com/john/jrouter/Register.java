@@ -31,7 +31,7 @@ public class Register {
         return RouteType.CLASS;
     }
 
-    public static RouteRecord findRecord(RouteMsg msg) {
+    public static RouteRecord findRecord(RoutePath msg) {
         return RouteTables.sMap.get(msg.path);
     }
 

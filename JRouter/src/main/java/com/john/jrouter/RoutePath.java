@@ -11,11 +11,11 @@ import java.util.ArrayList;
  *
  * <p>路由消息</p>
  */
-public class RouteMsg extends RouteRecord {
+public class RoutePath extends RouteRecord {
     private Bundle bundle;
     private int flag;
 
-    public RouteMsg(String path) {
+    public RoutePath(String path) {
         super(path);
         flag = -1;
     }
@@ -38,67 +38,67 @@ public class RouteMsg extends RouteRecord {
         }
     }
 
-    public RouteMsg putParcelableArrayList(String key, ArrayList<? extends Parcelable> value) {
+    public RoutePath putParcelableArrayList(String key, ArrayList<? extends Parcelable> value) {
         initBundle();
         bundle.putParcelableArrayList(key, value);
         return this;
     }
 
-    public RouteMsg putParcelable(String key, Parcelable parcelable) {
+    public RoutePath putParcelable(String key, Parcelable parcelable) {
         initBundle();
         bundle.putParcelable(key, parcelable);
         return this;
     }
 
-    public RouteMsg putInt(String key, int value) {
+    public RoutePath putInt(String key, int value) {
         initBundle();
         bundle.putInt(key, value);
         return this;
     }
 
-    public RouteMsg putLong(String key, long value) {
+    public RoutePath putLong(String key, long value) {
         initBundle();
         bundle.putLong(key, value);
         return this;
     }
 
-    public RouteMsg putDouble(String key, double value) {
+    public RoutePath putDouble(String key, double value) {
         initBundle();
         bundle.putDouble(key, value);
         return this;
     }
 
-    public RouteMsg putString(String key, String value) {
+    public RoutePath putString(String key, String value) {
         initBundle();
         bundle.putString(key, value);
         return this;
     }
 
-    public RouteMsg putBoolean(String key, boolean value) {
+    public RoutePath putBoolean(String key, boolean value) {
         initBundle();
         bundle.putBoolean(key, value);
         return this;
     }
 
-    public RouteMsg putStringArray(String key, String[] value) {
+    public RoutePath putStringArray(String key, String[] value) {
         initBundle();
         bundle.putStringArray(key, value);
         return this;
     }
 
-    public RouteMsg putBundle(String key, Bundle bundle) {
+    public RoutePath putBundle(String key, Bundle bundle) {
         initBundle();
         bundle.putBundle(key, bundle);
         return this;
     }
 
-    public RouteMsg setFlags(int flag) {
+    public RoutePath setFlags(int flag) {
         initBundle();
         this.flag = flag;
         return this;
     }
 
-    public RouteMsg addFlags(int flag) {
+    public RoutePath addFlags(int flag) {
         initBundle();
         this.flag |= flag;
         return this;

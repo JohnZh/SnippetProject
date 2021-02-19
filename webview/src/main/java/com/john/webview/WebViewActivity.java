@@ -3,6 +3,7 @@ package com.john.webview;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 
 import com.john.jrouter.annotation.Route;
@@ -63,6 +64,7 @@ public class WebViewActivity extends AppCompatActivity {
         String url = intent.getStringExtra("url");
         if (!TextUtils.isEmpty(url)) {
             this.url = url;
+            Log.d("TEMP", "processIntent: " + url);
         }
     }
 }

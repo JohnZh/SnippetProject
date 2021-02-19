@@ -73,6 +73,8 @@ public class SecureWebView extends WebView {
                 getContext().startActivity(intent);
             }
         });
+
+        setVerticalScrollBarEnabled(true);
     }
 
     @SuppressLint("JavascriptInterface")
@@ -115,6 +117,9 @@ public class SecureWebView extends WebView {
         settings.setDomStorageEnabled(true);
         settings.setUseWideViewPort(true);
         settings.setLoadWithOverviewMode(true);
+        settings.setSupportZoom(true);
+        settings.setBuiltInZoomControls(true);
+        settings.setDisplayZoomControls(false);
     }
 
     public void setWebCallback(WebCallback webCallback) {

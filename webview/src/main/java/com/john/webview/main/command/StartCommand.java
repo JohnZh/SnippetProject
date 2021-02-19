@@ -24,6 +24,6 @@ public class StartCommand implements Command {
     @Override
     public void execute(String jsonParams, CallbackFromService call) {
         Path path = new Gson().fromJson(jsonParams, Path.class);
-        JRouter.get().message(path.path).route();
+        JRouter.get().path(path.path).route();
     }
 }

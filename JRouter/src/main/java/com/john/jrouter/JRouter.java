@@ -53,40 +53,40 @@ public class JRouter {
         }
     }
 
-    public RouteMsg message(@NonNull String path) {
+    public RoutePath path(@NonNull String path) {
         if (TextUtils.isEmpty(path)) {
             throw new RuntimeException("path cannot be empty");
         }
-        return new RouteMsg(path);
+        return new RoutePath(path);
     }
 
-    void route(final RouteMsg routeMsg, final Context context, final int requestCode, final RouteCallback callback) {
+    void route(final RoutePath routePath, final Context context, final int requestCode, final RouteCallback callback) {
         final Context curContext = context == null ? mAppContext : context;
 
-        RouteRecord record = Register.findRecord(routeMsg);
+        RouteRecord record = Register.findRecord(routePath);
         if (record != null) {
-            routeMsg.setClazz(record.getClazz());
-            routeMsg.setType(record.getType());
+            routePath.setClazz(record.getClazz());
+            routePath.setType(record.getType());
             if (callback != null) {
-                callback.onFound(routeMsg);
+                callback.onFound(routePath);
             }
         } else {
             if (callback != null) {
-                callback.onLost(routeMsg);
+                callback.onLost(routePath);
             }
             return;
         }
 
-        switch (routeMsg.getType()) {
+        switch (routePath.getType()) {
             case ACTIVITY:
-                final Intent intent = new Intent(curContext, routeMsg.getClazz());
-                if (routeMsg.getBundle() != null) {
-                    intent.putExtras(routeMsg.getBundle());
+                final Intent intent = new Intent(curContext, routePath.getClazz());
+                if (routePath.getBundle() != null) {
+                    intent.putExtras(routePath.getBundle());
                 }
 
                 // flag
-                if (routeMsg.getFlag() != -1) { // custom flag
-                    intent.setFlags(routeMsg.getFlag());
+                if (routePath.getFlag() != -1) { // custom flag
+                    intent.setFlags(routePath.getFlag());
                 } else if (!(curContext instanceof Activity)) {
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 }
@@ -96,16 +96,16 @@ public class JRouter {
                     public void run() {
                         startActivity(intent, curContext, requestCode);
                         if (callback != null) {
-                            callback.onArrived(routeMsg);
+                            callback.onArrived(routePath);
                         }
                     }
                 });
                 break;
 
             case FRAGMENT:
-                Fragment fragment = getFragment(routeMsg);
-                if (routeMsg.getBundle() != null) {
-                    fragment.setArguments(routeMsg.getBundle());
+                Fragment fragment = getFragment(routePath);
+                if (routePath.getBundle() != null) {
+                    fragment.setArguments(routePath.getBundle());
                 }
                 if (fragment != null && callback != null && callback instanceof RouteCallbackWithInstance) {
                     ((RouteCallbackWithInstance) callback).onInstance(fragment);
@@ -137,8 +137,8 @@ public class JRouter {
         return null;
     }
 
-    private Fragment getFragment(RouteMsg routeMsg) {
-        Class clazz = routeMsg.getClazz();
+    private Fragment getFragment(RoutePath routePath) {
+        Class clazz = routePath.getClazz();
         try {
             Object newInstance = clazz.newInstance();
             return (Fragment) newInstance;
